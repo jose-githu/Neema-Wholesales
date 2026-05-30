@@ -1,6 +1,6 @@
 /* =====================================================
    NEEMA WHOLESALE — styles.css
-   Designed for: Kamukunji Ndogo Mali Mali Wholesale
+   Designed for: Mali Mali Wholesale · Kimana, Kajiado
    Palette: Emerald green + deep slate + warm amber
    Fonts: Syne (headings) + DM Sans (body)
    ===================================================== */
@@ -173,6 +173,246 @@ address { font-style: normal; }
   background: var(--green-50);
 }
 
+/* ── NAV DROPDOWN WRAPPER ───────────────────────── */
+.nav-item-dropdown {
+  position: relative;
+}
+
+/* The trigger button inherits .nav-link appearance */
+.nav-link-dropdown {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  line-height: inherit;
+}
+
+.nav-chevron {
+  font-size: 0.65rem;
+  transition: transform var(--transition);
+  color: var(--slate-400);
+}
+
+.nav-item-dropdown.is-open .nav-chevron {
+  transform: rotate(180deg);
+  color: var(--green-600);
+}
+
+.nav-item-dropdown.is-open .nav-link-dropdown {
+  color: var(--green-700);
+  background: var(--green-50);
+}
+
+/* ── MEGA MENU ──────────────────────────────────── */
+.mega-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  width: 760px;
+  background: white;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.22s cubic-bezier(0.4,0,0.2,1),
+    transform 0.22s cubic-bezier(0.4,0,0.2,1),
+    visibility 0.22s;
+  z-index: 200;
+  overflow: hidden;
+}
+
+.nav-item-dropdown.is-open .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Arrow pointer above the dropdown */
+.mega-menu::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-left: 1px solid var(--slate-200);
+  border-top: 1px solid var(--slate-200);
+  border-radius: 3px 0 0 0;
+  rotate: 45deg;
+}
+
+.mega-menu-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  padding: 1.25rem 1.25rem 0;
+  border-bottom: 1px solid var(--slate-100);
+}
+
+/* ── MEGA CARD ──────────────────────────────────── */
+.mega-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  margin-bottom: 1.25rem;
+  border: 1px solid transparent;
+}
+
+.mega-card:hover {
+  background: var(--green-50);
+  border-color: var(--green-200);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Image wrapper — fixed dimensions prevent CLS */
+.mega-card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 110px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--slate-100);
+  flex-shrink: 0;
+}
+
+.mega-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.mega-card:hover .mega-card-img-wrap img {
+  transform: scale(1.06);
+}
+
+/* Category badge over image */
+.mega-card-badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  background: var(--green-600);
+  color: white;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.mega-card-badge-rose   { background: #e11d48; }
+.mega-card-badge-violet { background: #7c3aed; }
+.mega-card-badge-amber  { background: var(--amber-500); color: white; }
+
+/* Card body row */
+.mega-card-body {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 0.5rem 0.5rem;
+}
+
+.mega-card-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.mega-card-title {
+  font-family: var(--font-head);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--slate-900);
+  line-height: 1.2;
+}
+
+.mega-card-desc {
+  font-size: 0.68rem;
+  color: var(--slate-400);
+  margin-top: 0.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mega-card-arrow {
+  margin-left: auto;
+  font-size: 0.65rem;
+  color: var(--slate-300);
+  flex-shrink: 0;
+  transition: color var(--transition), transform var(--transition);
+}
+
+.mega-card:hover .mega-card-arrow {
+  color: var(--green-600);
+  transform: translateX(2px);
+}
+
+/* ── MEGA MENU FOOTER BAR ───────────────────────── */
+.mega-menu-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.5rem;
+  background: var(--slate-50);
+  gap: 1rem;
+}
+
+.mega-footer-text {
+  font-size: 0.8rem;
+  color: var(--slate-500);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mega-footer-text i { color: var(--amber-500); }
+
+.mega-footer-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 1rem;
+  background: var(--wa-green);
+  color: white;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 2px 8px rgba(37,211,102,.35);
+}
+
+.mega-footer-cta:hover {
+  background: var(--wa-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(37,211,102,.45);
+}
+
 /* Header CTA */
 .header-cta {
   display: flex;
@@ -237,10 +477,10 @@ address { font-style: normal; }
   overflow: hidden;
   background: white;
   border-top: 1px solid var(--slate-200);
-  transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1);
+  transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1);
 }
 
-.mobile-nav.open { max-height: 320px; }
+.mobile-nav.open { max-height: 600px; }
 
 .mobile-nav-link,
 .mobile-nav-cta {
@@ -266,6 +506,104 @@ address { font-style: normal; }
 }
 
 .mobile-nav-cta:hover { background: var(--wa-dark); }
+
+/* ── MOBILE PRODUCTS ACCORDION ──────────────────── */
+.mobile-products-section {
+  border-bottom: 1px solid var(--slate-100);
+}
+
+.mobile-products-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  /* inherits .mobile-nav-link padding & font */
+}
+
+.mobile-products-chevron {
+  font-size: 0.7rem;
+  color: var(--slate-400);
+  transition: transform var(--transition);
+}
+
+.mobile-products-toggle[aria-expanded="true"] .mobile-products-chevron {
+  transform: rotate(180deg);
+  color: var(--green-600);
+}
+
+/* Accordion panel */
+.mobile-products-panel {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--slate-50);
+  transition: max-height 0.32s cubic-bezier(0.4,0,0.2,1);
+}
+
+.mobile-products-panel.open {
+  max-height: 600px;
+}
+
+/* Each product row inside accordion */
+.mobile-product-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 1.5rem;
+  border-bottom: 1px solid var(--slate-100);
+  text-decoration: none;
+  transition: background var(--transition);
+}
+
+.mobile-product-item:last-child { border-bottom: none; }
+
+.mobile-product-item:hover {
+  background: var(--green-50);
+}
+
+/* Thumbnail */
+.mobile-product-img-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--slate-200);
+}
+
+.mobile-product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.mobile-product-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.mobile-product-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--slate-800);
+  line-height: 1.25;
+}
+
+.mobile-product-sub {
+  font-size: 0.72rem;
+  color: var(--slate-400);
+  margin-top: 0.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 
 /* ── HERO ───────────────────────────────────────── */
@@ -1164,9 +1502,6 @@ address { font-style: normal; }
   font-weight: 700;
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
   text-decoration: none;
-  position: fixed;
-  bottom: 1.75rem;
-  right: 1.75rem;
 }
 
 .float-wa:hover {
@@ -1240,6 +1575,10 @@ address { font-style: normal; }
   }
 
   .footer-col-brand { grid-column: 1 / -1; }
+
+  /* Mega menu narrows on smaller desktops */
+  .mega-menu { width: 640px; }
+  .mega-menu-inner { grid-template-columns: repeat(4, 1fr); gap: 0; }
 }
 
 /* ── Tablets (≤768px) ────────────────────────── */
@@ -1282,6 +1621,9 @@ address { font-style: normal; }
     justify-content: center;
     border-radius: 50%;
   }
+
+  /* Mega menu hidden entirely on tablet/mobile — replaced by accordion */
+  .mega-menu { display: none !important; }
 }
 
 /* ── Mobile (≤480px) ─────────────────────────── */

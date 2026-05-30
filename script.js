@@ -1,7 +1,7 @@
 /**
  * =====================================================
  *  NEEMA WHOLESALE — script.js
- *  Kamukunji Ndogo Mali Mali Wholesale · Naivasha
+ *  Mali Mali Wholesale · Kimana, Oloitokitok, Kajiado
  * =====================================================
  */
 
@@ -39,7 +39,77 @@ function initStickyHeader() {
   }, 80);
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // run once on load
+  onScroll();
+}
+
+/* ── Mega Menu (Desktop Products Dropdown) ──────── */
+function initMegaMenu() {
+  const wrapper = document.getElementById('productsDropdownWrapper');
+  const btn     = document.getElementById('productsMenuBtn');
+  const menu    = document.getElementById('megaMenu');
+  if (!wrapper || !btn || !menu) return;
+
+  let closeTimer;
+
+  function openMenu() {
+    clearTimeout(closeTimer);
+    wrapper.classList.add('is-open');
+    btn.setAttribute('aria-expanded', 'true');
+    menu.removeAttribute('aria-hidden');
+  }
+
+  function closeMenu() {
+    wrapper.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+  }
+
+  function scheduleClose() {
+    closeTimer = setTimeout(closeMenu, 120);
+  }
+
+  // Toggle on button click (also supports keyboard)
+  btn.addEventListener('click', () => {
+    if (wrapper.classList.contains('is-open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Hover behaviour: open on mouse enter, close on mouse leave (with small grace delay)
+  wrapper.addEventListener('mouseenter', openMenu);
+  wrapper.addEventListener('mouseleave', scheduleClose);
+
+  // If the mouse re-enters the menu panel, cancel the close timer
+  menu.addEventListener('mouseenter', () => clearTimeout(closeTimer));
+  menu.addEventListener('mouseleave', scheduleClose);
+
+  // Close when a menu item is activated (click or keyboard)
+  menu.querySelectorAll('.mega-card').forEach(card => {
+    card.addEventListener('click', closeMenu);
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && wrapper.classList.contains('is-open')) {
+      closeMenu();
+      btn.focus();
+    }
+  });
+
+  // Close on click outside
+  document.addEventListener('click', e => {
+    if (
+      wrapper.classList.contains('is-open') &&
+      !wrapper.contains(e.target)
+    ) {
+      closeMenu();
+    }
+  });
+
+  // Set initial aria state
+  menu.setAttribute('aria-hidden', 'true');
 }
 
 /* ── Mobile Menu Toggle ─────────────────────────── */
@@ -55,7 +125,7 @@ function initMobileMenu() {
     nav.setAttribute('aria-hidden', String(!isOpen));
   });
 
-  // Close mobile nav when any link inside it is clicked
+  // Close mobile nav when any plain link inside it is clicked
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('open');
@@ -80,9 +150,30 @@ function initMobileMenu() {
   });
 }
 
+/* ── Mobile Products Accordion ──────────────────── */
+function initMobileProductsAccordion() {
+  const toggleBtn = document.getElementById('mobileProductsToggle');
+  const panel     = document.getElementById('mobileProductsPanel');
+  if (!toggleBtn || !panel) return;
+
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = panel.classList.toggle('open');
+    toggleBtn.setAttribute('aria-expanded', String(isOpen));
+
+    // Recalculate parent mobile-nav max-height to ensure it accommodates accordion
+    const mobileNav = document.getElementById('mobileNav');
+    if (mobileNav && mobileNav.classList.contains('open')) {
+      // Force reflow by briefly resetting — the CSS transition handles the rest
+      mobileNav.style.maxHeight = isOpen
+        ? `${mobileNav.scrollHeight + panel.scrollHeight}px`
+        : `${mobileNav.scrollHeight}px`;
+    }
+  });
+}
+
 /* ── Smooth Scroll for anchor links ────────────── */
 function initSmoothScroll() {
-  const HEADER_HEIGHT = 72; // px – matches header height
+  const HEADER_HEIGHT = 72;
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
@@ -108,7 +199,6 @@ function initScrollReveal() {
 
   if (!targets.length) return;
 
-  // If IntersectionObserver isn't supported, just show everything
   if (!('IntersectionObserver' in window)) {
     targets.forEach(el => el.classList.add('animate-in'));
     return;
@@ -116,14 +206,11 @@ function initScrollReveal() {
 
   const observer = new IntersectionObserver(
     entries => {
-      entries.forEach((entry, i) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Stagger by index within a parent grid
-          const siblings = Array.from(
-            entry.target.parentElement.children
-          );
+          const siblings = Array.from(entry.target.parentElement.children);
           const idx = siblings.indexOf(entry.target);
-          const delay = Math.min(idx * 80, 400); // cap at 400ms
+          const delay = Math.min(idx * 80, 400);
 
           setTimeout(() => {
             entry.target.classList.add('animate-in');
@@ -139,7 +226,6 @@ function initScrollReveal() {
   );
 
   targets.forEach(el => {
-    // Start invisible so the animation plays
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     observer.observe(el);
@@ -159,10 +245,8 @@ function initFloatButton() {
     const scrollingDown = currentY > lastY;
     lastY = currentY;
 
-    // Hide briefly while scrolling down fast, always show at rest
     if (scrollingDown && currentY > 300) {
       btn.style.opacity = '0.6';
-      btn.style.transform = btn.style.transform || '';
       clearTimeout(hideTimeout);
       hideTimeout = setTimeout(() => {
         btn.style.opacity = '1';
@@ -175,7 +259,6 @@ function initFloatButton() {
 
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // Transition for opacity changes
   btn.style.transition = 'opacity 0.4s ease, background 0.25s ease, transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s ease';
 }
 
@@ -305,7 +388,9 @@ function init() {
   setFooterYear();
   injectActiveNavStyle();
   initStickyHeader();
+  initMegaMenu();
   initMobileMenu();
+  initMobileProductsAccordion();
   initSmoothScroll();
   initScrollReveal();
   initFloatButton();
