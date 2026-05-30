@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Neema Wholesale – Kamukunji Ndogo Mali Mali Wholesale in Naivasha. Bulk home appliances, plasticware, kitchenware, and cleaning supplies at wholesale prices." />
+  <title>Neema Wholesale | Kamukunji Ndogo – Naivasha</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       STICKY HEADER
+  ════════════════════════════════════════ -->
+  <header id="site-header" role="banner">
+    <div class="header-inner">
+      <div class="brand-block">
+        <a href="#" class="brand-logo" aria-label="Neema Wholesale – Home">
+          <span class="brand-icon"><i class="fa-solid fa-store"></i></span>
+          <div class="brand-text">
+            <span class="brand-name">NEEMA WHOLESALE</span>
+            <span class="brand-sub"><i class="fa-solid fa-location-dot"></i> Kamukunji Ndogo · Naivasha</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="header-nav" aria-label="Primary navigation">
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <a
+        href="https://wa.me/c/254727735546"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="header-cta"
+        aria-label="View full WhatsApp product catalog"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>View Catalogue</span>
+      </a>
+
+      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <a href="#products" class="mobile-nav-link">Products</a>
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <a href="https://wa.me/c/254727735546" target="_blank" rel="noopener noreferrer" class="mobile-nav-cta">
+        <i class="fa-brands fa-whatsapp"></i> View Catalogue
+      </a>
+    </div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════
+       HERO SECTION
+  ════════════════════════════════════════ -->
+  <section id="hero" aria-labelledby="hero-heading">
+    <div class="hero-bg-mesh" aria-hidden="true"></div>
+    <div class="hero-pattern" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-fire-flame-curved"></i>
+        Kenya's Trusted Mali Mali Wholesale
+      </div>
+
+      <h1 id="hero-heading" class="hero-heading">
+        Stock Up Smart.<br />
+        <em>Sell More, Earn More.</em>
+      </h1>
+
+      <p class="hero-subtext">
+        Wholesale electronics, plasticware, kitchenware &amp; cleaning supplies — 
+        direct from Kamukunji Ndogo. Retail-ready stock, unbeatable wholesale margins.
+      </p>
+
+      <div class="hero-stats" role="list">
+        <div class="hero-stat" role="listitem">
+          <span class="stat-num">500<sup>+</sup></span>
+          <span class="stat-label">Product Lines</span>
+        </div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat" role="listitem">
+          <span class="stat-num">24/7</span>
+          <span class="stat-label">WhatsApp Orders</span>
+        </div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat" role="listitem">
+          <span class="stat-num">5★</span>
+          <span class="stat-label">Trusted Supplier</span>
+        </div>
+      </div>
+
+      <div class="hero-ctas" role="group" aria-label="Primary actions">
+        <a href="#products" class="btn-primary" aria-label="Browse product categories">
+          <i class="fa-solid fa-boxes-stacked"></i>
+          Browse Products
+        </a>
+        <a
+          href="https://wa.me/254106567593?text=Hi%20Neema%20Wholesale%2C%20I%27d%20like%20to%20place%20a%20wholesale%20order.%20Please%20share%20your%20latest%20pricelist."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-secondary"
+          aria-label="Chat with us on WhatsApp"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          Chat With Us
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <span>Scroll to explore</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       VALUE PROPS
+  ════════════════════════════════════════ -->
+  <section id="about" class="value-props" aria-labelledby="value-heading">
+    <div class="section-container">
+      <div class="section-label">Why Choose Neema Wholesale</div>
+      <h2 id="value-heading" class="section-title">Built for Retailers &amp; Bulk Buyers</h2>
+
+      <div class="value-grid" role="list">
+
+        <article class="value-card" role="listitem">
+          <div class="value-icon-wrap value-icon-green">
+            <i class="fa-solid fa-tags" aria-hidden="true"></i>
+          </div>
+          <h3 class="value-card-title">Tiered Wholesale Pricing</h3>
+          <p class="value-card-text">
+            The more you buy, the more you save. Our pricing tiers reward volume purchases — 
+            ideal for shop owners, hawkers, and market traders stocking up for the season.
+          </p>
+          <ul class="value-list" aria-label="Pricing tier highlights">
+            <li><i class="fa-solid fa-check"></i> Minimum order quantities</li>
+            <li><i class="fa-solid fa-check"></i> Flexible payment options</li>
+            <li><i class="fa-solid fa-check"></i> Bulk discount bundles</li>
+          </ul>
+        </article>
+
+        <article class="value-card value-card--featured" role="listitem">
+          <div class="value-icon-wrap value-icon-wa">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          </div>
+          <div class="featured-badge">Most Popular</div>
+          <h3 class="value-card-title">Order Instantly on WhatsApp</h3>
+          <p class="value-card-text">
+            No waiting, no forms. Browse our live catalogue, send a message, and get your 
+            order confirmed within minutes. We respond fast — your business can't afford delays.
+          </p>
+          <a
+            href="https://wa.me/c/254727735546"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="value-card-cta"
+          >
+            Open Catalogue <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+        <article class="value-card" role="listitem">
+          <div class="value-icon-wrap value-icon-blue">
+            <i class="fa-solid fa-shop" aria-hidden="true"></i>
+          </div>
+          <h3 class="value-card-title">Physical Shop in Naivasha</h3>
+          <p class="value-card-text">
+            Walk in and see what you're buying. Our physical store at Kamukunji Ndogo lets 
+            you inspect quality before committing. Come compare, confirm, and carry.
+          </p>
+          <ul class="value-list" aria-label="Shop highlights">
+            <li><i class="fa-solid fa-check"></i> Mon–Sat, 8am–6pm</li>
+            <li><i class="fa-solid fa-check"></i> Real stock, real prices</li>
+            <li><i class="fa-solid fa-check"></i> Friendly team on-site</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       PRODUCT GRID
+  ════════════════════════════════════════ -->
+  <section id="products" class="products-section" aria-labelledby="products-heading">
+    <div class="section-container">
+      <div class="section-label">Product Categories</div>
+      <h2 id="products-heading" class="section-title">Everything Your Shop Needs</h2>
+      <p class="section-subtitle">
+        Four core categories, thousands of product lines. All available wholesale with fast WhatsApp ordering.
+      </p>
+
+      <div class="products-grid" role="list">
+
+        <!-- Card 1: Home Appliances & Electronics -->
+        <article class="product-card" role="listitem" data-category="electronics">
+          <div class="product-card-header">
+            <div class="product-icon-wrap product-icon-amber">
+              <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+            </div>
+            <div class="product-badge">High Demand</div>
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-card-title">Home Appliances &amp; Electronics</h3>
+            <p class="product-card-desc">
+              Plug-and-sell electronics for everyday homes. Stock the goods that move fastest at retail markets.
+            </p>
+            <ul class="product-items" aria-label="Electronics product examples">
+              <li><i class="fa-solid fa-circle-dot"></i> Torches &amp; LED Lanterns</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Phone Chargers &amp; Cables</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Radios &amp; Speakers</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Extension Cords &amp; Sockets</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Batteries &amp; Bulbs</li>
+            </ul>
+          </div>
+          <div class="product-card-footer">
+            <a
+              href="https://wa.me/254106567593?text=Hi%20Neema%20Wholesale%2C%20I%20am%20inquiring%20about%20Wholesale%20Home%20Appliances%20%26%20Electronics.%20Please%20share%20your%20current%20pricelist%20and%20available%20stock."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="product-order-btn"
+              aria-label="Order Home Appliances and Electronics via WhatsApp"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              Order via WhatsApp
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 2: Plasticware -->
+        <article class="product-card" role="listitem" data-category="plastics">
+          <div class="product-card-header">
+            <div class="product-icon-wrap product-icon-cyan">
+              <i class="fa-solid fa-bucket" aria-hidden="true"></i>
+            </div>
+            <div class="product-badge product-badge-green">Best Seller</div>
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-card-title">Mali Mali Plasticware</h3>
+            <p class="product-card-desc">
+              Basins, buckets, crates, and more. The backbone of every household and the fastest-moving stock for mali mali traders.
+            </p>
+            <ul class="product-items" aria-label="Plasticware product examples">
+              <li><i class="fa-solid fa-circle-dot"></i> Wash Basins (All Sizes)</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Water Buckets &amp; Lids</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Storage Crates &amp; Bins</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Laundry Baskets</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Jerry Cans &amp; Containers</li>
+            </ul>
+          </div>
+          <div class="product-card-footer">
+            <a
+              href="https://wa.me/254106567593?text=Hi%20Neema%20Wholesale%2C%20I%20am%20inquiring%20about%20Mali%20Mali%20Plasticware%20(Basins%2C%20Buckets%2C%20Crates).%20Please%20share%20your%20current%20stock%20and%20wholesale%20prices."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="product-order-btn"
+              aria-label="Order Plasticware via WhatsApp"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              Order via WhatsApp
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 3: Kitchenware -->
+        <article class="product-card" role="listitem" data-category="kitchen">
+          <div class="product-card-header">
+            <div class="product-icon-wrap product-icon-rose">
+              <i class="fa-solid fa-kitchen-set" aria-hidden="true"></i>
+            </div>
+            <div class="product-badge product-badge-rose">Popular Pick</div>
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-card-title">Kitchenware &amp; Sufurias</h3>
+            <p class="product-card-desc">
+              Pots, flasks, utensils, and complete kitchen sets. Quality cookware that sells itself in every household market.
+            </p>
+            <ul class="product-items" aria-label="Kitchenware product examples">
+              <li><i class="fa-solid fa-circle-dot"></i> Aluminium Sufurias (All Sizes)</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Thermos Flasks</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Plates, Cups &amp; Mugs</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Cooking Spoons &amp; Utensils</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Non-Stick Cookware Sets</li>
+            </ul>
+          </div>
+          <div class="product-card-footer">
+            <a
+              href="https://wa.me/254106567593?text=Hi%20Neema%20Wholesale%2C%20I%20am%20inquiring%20about%20Wholesale%20Kitchenware%20%26%20Sufurias%20(Pots%2C%20Flasks%2C%20Utensils).%20Kindly%20share%20your%20available%20stock%20and%20prices."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="product-order-btn"
+              aria-label="Order Kitchenware and Sufurias via WhatsApp"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              Order via WhatsApp
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 4: Cleaning Supplies -->
+        <article class="product-card" role="listitem" data-category="cleaning">
+          <div class="product-card-header">
+            <div class="product-icon-wrap product-icon-violet">
+              <i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i>
+            </div>
+            <div class="product-badge product-badge-violet">Always Moving</div>
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-card-title">Cleaning Supplies &amp; Detergents</h3>
+            <p class="product-card-desc">
+              Everyday essentials that never sit on shelves. Detergents, mops, brooms — the stock every home and business replenishes regularly.
+            </p>
+            <ul class="product-items" aria-label="Cleaning supplies product examples">
+              <li><i class="fa-solid fa-circle-dot"></i> Washing Powder &amp; Liquid Soap</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Disinfectants &amp; Bleach</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Mops, Brooms &amp; Brushes</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Sponges &amp; Scrubbers</li>
+              <li><i class="fa-solid fa-circle-dot"></i> Toilet Cleaners &amp; Air Fresheners</li>
+            </ul>
+          </div>
+          <div class="product-card-footer">
+            <a
+              href="https://wa.me/254106567593?text=Hi%20Neema%20Wholesale%2C%20I%20am%20inquiring%20about%20Wholesale%20Cleaning%20Supplies%20%26%20Detergents.%20Please%20share%20your%20current%20pricelist%20and%20available%20bulk%20packs."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="product-order-btn"
+              aria-label="Order Cleaning Supplies via WhatsApp"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              Order via WhatsApp
+            </a>
+          </div>
+        </article>
+
+      </div><!-- /products-grid -->
+
+      <!-- Full Catalogue CTA -->
+      <div class="catalogue-cta-block">
+        <p class="catalogue-cta-text">Can't find what you need? Browse the full product catalogue on WhatsApp.</p>
+        <a
+          href="https://wa.me/c/254727735546"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-catalogue"
+          aria-label="Open full WhatsApp catalogue"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          Open Full WhatsApp Catalogue
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       HOW IT WORKS
+  ════════════════════════════════════════ -->
+  <section class="how-it-works" id="contact" aria-labelledby="how-heading">
+    <div class="section-container">
+      <div class="section-label">Simple Process</div>
+      <h2 id="how-heading" class="section-title how-title">Order in 3 Easy Steps</h2>
+
+      <div class="steps-grid" role="list">
+        <div class="step-item" role="listitem">
+          <div class="step-number" aria-hidden="true">01</div>
+          <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h3 class="step-title">Browse & Choose</h3>
+          <p class="step-text">Explore our WhatsApp catalogue or scroll through this page to find the products and categories you need.</p>
+        </div>
+        <div class="step-connector" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step-item" role="listitem">
+          <div class="step-number" aria-hidden="true">02</div>
+          <div class="step-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <h3 class="step-title">Send Your Order</h3>
+          <p class="step-text">Click any "Order via WhatsApp" button. Your enquiry is pre-filled — just hit send and we'll respond promptly.</p>
+        </div>
+        <div class="step-connector" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step-item" role="listitem">
+          <div class="step-number" aria-hidden="true">03</div>
+          <div class="step-icon"><i class="fa-solid fa-box-open"></i></div>
+          <h3 class="step-title">Pick Up or Deliver</h3>
+          <p class="step-text">Collect from our shop at Kamukunji Ndogo or arrange delivery. Pay &amp; take your stock — it's that simple.</p>
+        </div>
+      </div>
+
+      <!-- Contact Details -->
+      <div class="contact-bar" role="complementary" aria-label="Contact information">
+        <a href="tel:+254106567593" class="contact-item" aria-label="Call Neema Wholesale">
+          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="contact-detail">
+            <span class="contact-label">Call Us</span>
+            <span class="contact-value">+254 106 567 593</span>
+          </div>
+        </a>
+        <a
+          href="https://wa.me/254106567593?text=Hi%20Neema%20Wholesale%2C%20I%27d%20like%20to%20enquire%20about%20your%20wholesale%20products."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-item contact-item-wa"
+          aria-label="WhatsApp Neema Wholesale"
+        >
+          <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <div class="contact-detail">
+            <span class="contact-label">WhatsApp</span>
+            <span class="contact-value">+254 106 567 593</span>
+          </div>
+        </a>
+        <a
+          href="https://www.facebook.com/p/Kamukunji-Ndogo-Mali-Mali-Wholesale-Naivasha-100057530855937/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-item"
+          aria-label="Visit our Facebook page"
+        >
+          <div class="contact-icon"><i class="fa-brands fa-facebook-f"></i></div>
+          <div class="contact-detail">
+            <span class="contact-label">Facebook</span>
+            <span class="contact-value">Find Us on Facebook</span>
+          </div>
+        </a>
+        <div class="contact-item contact-item-location">
+          <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="contact-detail">
+            <span class="contact-label">Location</span>
+            <span class="contact-value">Kamukunji Ndogo, Naivasha</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+
+      <div class="footer-grid">
+
+        <!-- Brand Column -->
+        <div class="footer-col footer-col-brand">
+          <div class="footer-logo">
+            <span class="footer-logo-icon"><i class="fa-solid fa-store"></i></span>
+            <div>
+              <span class="footer-brand-name">NEEMA WHOLESALE</span>
+              <span class="footer-brand-sub">Kamukunji Ndogo · Naivasha</span>
+            </div>
+          </div>
+          <p class="footer-about">
+            Your trusted Mali Mali wholesale partner in Naivasha. We supply bulk home appliances, 
+            plasticware, kitchenware, and cleaning products to retailers and traders across the region.
+          </p>
+          <div class="footer-socials" role="list" aria-label="Social media links">
+            <a
+              href="https://www.facebook.com/p/Kamukunji-Ndogo-Mali-Mali-Wholesale-Naivasha-100057530855937/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-btn social-fb"
+              role="listitem"
+              aria-label="Visit our Facebook page"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://wa.me/254106567593"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-btn social-wa"
+              role="listitem"
+              aria-label="Chat on WhatsApp"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="#" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="#products" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Products</a></li>
+            <li><a href="#about" class="footer-link"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="#contact" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+            <li>
+              <a href="https://wa.me/c/254727735546" target="_blank" rel="noopener noreferrer" class="footer-link">
+                <i class="fa-solid fa-chevron-right"></i> WhatsApp Catalogue
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/p/Kamukunji-Ndogo-Mali-Mali-Wholesale-Naivasha-100057530855937/" target="_blank" rel="noopener noreferrer" class="footer-link">
+                <i class="fa-solid fa-chevron-right"></i> Facebook Page
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Product Categories -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Product Categories</h4>
+          <ul class="footer-links" role="list">
+            <li>
+              <a href="https://wa.me/254106567593?text=Hi%20Neema%20Wholesale%2C%20enquiring%20about%20Electronics%20wholesale%20stock." target="_blank" rel="noopener noreferrer" class="footer-link">
+                <i class="fa-solid fa-bolt"></i> Home Appliances &amp; Electronics
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/254106567593?text=Hi%20Neema%20Wholesale%2C%20enquiring%20about%20Plasticware%20wholesale%20stock." target="_blank" rel="noopener noreferrer" class="footer-link">
+                <i class="fa-solid fa-bucket"></i> Mali Mali Plasticware
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/254106567593?text=Hi%20Neema%20Wholesale%2C%20enquiring%20about%20Kitchenware%20wholesale%20stock." target="_blank" rel="noopener noreferrer" class="footer-link">
+                <i class="fa-solid fa-kitchen-set"></i> Kitchenware &amp; Sufurias
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/254106567593?text=Hi%20Neema%20Wholesale%2C%20enquiring%20about%20Cleaning%20Supplies%20wholesale%20stock." target="_blank" rel="noopener noreferrer" class="footer-link">
+                <i class="fa-solid fa-spray-can-sparkles"></i> Cleaning Supplies
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Get in Touch</h4>
+          <address class="footer-address">
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>Kamukunji Ndogo, Naivasha,<br />Nakuru County, Kenya</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <a href="tel:+254106567593">+254 106 567 593</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <a href="https://wa.me/254106567593" target="_blank" rel="noopener noreferrer">WhatsApp Direct</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              <span>Mon – Sat: 8:00am – 6:00pm</span>
+            </div>
+          </address>
+        </div>
+
+      </div><!-- /footer-grid -->
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="footerYear"></span> Neema Wholesale · Kamukunji Ndogo, Naivasha. All rights reserved.</p>
+        <p class="footer-tagline">Mali Mali Wholesale — Stocking Kenya's Retailers</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════
+       FLOATING WHATSAPP CTA
+  ════════════════════════════════════════ -->
+  <a
+    href="https://wa.me/254106567593"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="float-wa"
+    id="floatWa"
+    aria-label="Chat on WhatsApp – Neema Wholesale"
+  >
+    <i class="fa-brands fa-whatsapp float-wa-icon" aria-hidden="true"></i>
+    <span class="float-wa-label">Chat Now</span>
+    <span class="float-wa-pulse" aria-hidden="true"></span>
+  </a>
+
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
